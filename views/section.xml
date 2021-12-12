@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_section_form" model="ir.ui.view">
+        <field name="name">school.section.form</field>
+        <field name="model">school.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <p>Student Class Form</p>
+                    <group>
+                        <group class="oe_title">
+                            <field name="clas" placeholder="Enter name"/>
+                            <field name="section" placeholder="Enter section"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_section_action" model="ir.actions.act_window">
+        <field name="name">Section</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.section</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Section
+            </p>
+            <p>
+                Enter new section
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="school_section"
+              name="Section"
+              parent="school_conf_root"
+              action="view_section_action"
+              sequence="10"/>
+</odoo>

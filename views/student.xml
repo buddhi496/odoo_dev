@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_student_form" model="ir.ui.view">
+        <field name="name">school.students.form</field>
+        <field name="model">school.students</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <p>Student Information Form</p>
+                    <group>
+                        <group class="oe_title">
+                            <field name="name" placeholder="Enter Your First Name"/>
+                            <field name="mname" placeholder="Enter Your Middle Name"/>
+                            <field name="lname" placeholder="Enter Your Last Name"/>
+                        </group>
+                        <group>
+                            <field name="image" widget='image' class="oe_avatar"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="clas" placeholder="Your class"/>
+                            <field name="section" placeholder="Your section"/>
+                        </group>
+
+                        <group>
+                            <field name="roll"/>
+                            <field name="mobile"/>
+                        </group>
+                    </group>
+
+                    <p>Student Address Information</p>
+                    <group>
+                        <group>
+                            <p>Permanent Address</p>
+                            <field name="fstreet"/>
+                            <field name="sstreet"/>
+                            <field name="palika"/>
+                            <field name="district"/>
+                            <field name="state"/>
+                            <field name="country"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <p>Temporary Address</p>
+                            <field name="ffstreet"/>
+                            <field name="fsstreet"/>
+                            <field name="fpalika"/>
+                            <field name="fdistrict"/>
+                            <field name="fstate"/>
+                            <field name="fcountry"/>
+                            <field name="fzip"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <p>Parental Information</p>
+                            <field name="nam" placeholder="Full Name"/>
+                            <field name="mobil"/>
+                            <field name="address"/>
+                            <field name="occupation"/>
+                        </group>
+
+                        <group>
+                            <p>Guardian Information</p>
+                            <field name="na" placeholder="Full Name"/>
+                            <field name="mobi"/>
+                            <field name="add"/>
+                            <field name="occ"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_student_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.students</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add student
+            </p>
+            <p>
+                Enter new student
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="school_root"
+              name="MySchool"
+              sequence="10"/>
+
+    <menuitem id="school_student_root"
+              name="Students"
+              parent="school_root"
+              sequence="10"/>
+
+    <menuitem id="school_student"
+              name="Students"
+              parent="school_student_root"
+              action="view_student_action"
+              sequence="10"/>
+
+     <!--<record id="view_student_form" model="ir.ui.view">
+        <field name="name">school.class.form</field>
+        <field name="model">school.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <p>Student Class Form</p>
+                    <group>
+                        <group class="oe_title">
+                            <field name="name" placeholder="Enter name"/>
+                            <field name="clas" placeholder="Enter class"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="view_config_action" model="ir.actions.act_window">
+        <field name="name">Class</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.class</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Class
+            </p>
+            <p>
+                Enter new class
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="school_conf_root"
+              name="Configuration"
+              parent="school_root"
+              sequence="10"/>
+
+    <menuitem id="school_class"
+              name="CLass"
+              parent="school_conf_root"
+              action="view_config_action"
+              sequence="10"/>-->
+
+    <!--<record id="view_section_form" model="ir.ui.view">
+        <field name="name">school.section.form</field>
+        <field name="model">school.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <p>Student Class Form</p>
+                    <group>
+                        <group class="oe_title">
+                            <field name="clas" placeholder="Enter name"/>
+                            <field name="section" placeholder="Enter section"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_section_action" model="ir.actions.act_window">
+        <field name="name">Section</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.section</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Section
+            </p>
+            <p>
+                Enter new section
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="school_section"
+              name="Section"
+              parent="school_conf_root"
+              action="view_section_action"
+              sequence="10"/>-->
+</odoo>
+
+
